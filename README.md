@@ -46,7 +46,7 @@ final/
 1. **Clone this repository:**
    ```bash
    git clone https://github.com/LindaM123/women-home-web-page.git
-   cd women-home/final
+   cd women-home-web-page/final
    ```
 
 2. **Create and activate a virtual environment (optional but recommended):**
