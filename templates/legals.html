@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    Please select the lawyer you would like to work with.
+    <form action = "/legal" method ="post">
+        <div class = "form-group">
+            <select name="lawyer">
+                {% for dato in lawyers %}
+                <option>{{dato['username']}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Select</button>
+    </form>
+{% endblock %}    

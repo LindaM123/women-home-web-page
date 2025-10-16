@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    How can we help you?
+    Please choose one option.
+    <form action="/legal">
+        <button autocomplete="off" class="btn btn-primary" type="submit">Legal advice</button>
+    </form>
+    <br/>
+    <br/>
+    <form action="/psy">
+        <button autocomplete="off" class="btn btn-primary" type="submit">Psychological counseling</button>
+    </form>
+{% endblock %}

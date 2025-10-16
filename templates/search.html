@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action = "/search" method ="post">
+        <div class = "form-group">
+            <select name="department">
+                <option>Amazonas</option>
+                <option>Antioquia</option>
+                <option>Arauca</option>
+                <option>Atlántico</option>
+                <option>Bogotá</option>
+                <option>Bolívar</option>
+                <option>Boyacá</option>
+                <option>Caldas</option>
+                <option>Caquetá</option>
+                <option>Casanare</option>
+                <option>Cauca</option>
+                <option>Cesar</option>
+                <option>Chocó</option>
+                <option>Córdoba</option>
+                <option>Cundinamarca</option>
+                <option>Guainía</option>
+                <option>Guaviare</option>
+                <option>Huila</option>
+                <option>La Guajira</option>
+                <option>Magdalena</option>
+                <option>Meta</option>
+                <option>Nariño</option>
+                <option>Norte de Santander</option>
+                <option>Putumayo</option>
+                <option>Quindio</option>
+                <option>Risaralda</option>
+                <option>San Andrés y Providencia</option>
+                <option>Santander</option>
+                <option>Sucre</option>
+                <option>Tolima</option>
+                <option>Valle del Cauca</option>
+                <option>Vaupés</option>
+                <option>Vichada</option>
+            </select>
+        </div>
+        
+        <div class = "form-group">
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="City" type="text">
+            <input autocomplete="off" class="form-control" name="nadult" placeholder="Adults number" type="numerical" min="0" pattern="^[0-9]+">
+            <input class="form-control" name="nchildren" placeholder="Children number" type="numerical" min="0" pattern="^[0-9]+">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    
+    {% for dato in datos %}
+        <table class = "tabla">
+            <tr>
+                <td><img class = "scaled" src="/static/casa4.png" alt="casa"></td>
+                <td class = "nombre">Department: </td>
+                <td>{{dato['department']}}</td>
+                <td class = "nombre">City: </td>
+                <td>{{dato['city']}}</td>                
+            </tr>
+            <tr>
+                <th class = "nombre">Adults number: </th>
+                <th>{{dato['nadult']}}</th>
+                <th class = "nombre">Children number: </th>
+                <th>{{dato['nchildren']}}</th>
+            </tr>
+            <tr>
+                <td class = "nombre">Bedrooms number:</td>
+                <td>{{dato['nbedroom']}}</td>
+                <td class = "nombre">Bathrooms number:</td>
+                <td>{{dato['nbathroom']}}</td>
+            </tr>
+            <tr>
+                <td class = "nombre">Services:</td>
+                <td>{{dato['service']}}</td>
+                <td class = "nombre">Email to contact:</td>
+                <td>{{dato['email']}}</td>
+            </tr>            
+        </table>
+    {% endfor %}
+{% endblock %}

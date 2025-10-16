@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <link href="/static/casa.ico" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Women Home: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body style = "background-color : #2ec4b6;">
+            <div id="menu1">
+                {% if session.user_id %}
+                    <ul class="menu2" >
+                        <li class="nav-item"><a class="nav-link" href="/search">Search house</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/profile">My profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/calendarios">Consultancy</a></li>
+                    </ul>
+                    <ul class="menu2" >
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="menu2" >
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/registerH">Register my house</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                {% endif %}
+                <br/>
+                <br/>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+        <h1>
+                Women home
+        </h1>
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+
+</html>
+
+    
+    
+    
+    

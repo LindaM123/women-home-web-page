@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class = "tabla2">
+        <tr>
+            <th> <img  class = "person" src="/static/person.png" alt="person"> </th>
+            <th>
+                <ul>
+                    <b>House</b>
+                    <li> Department: {{datos[0]['department']}} </li>
+                    <li> City: {{datos[0]['city']}} </li>
+                    <li> Adult number: {{datos[0]['nadult']}} </li>
+                    <li> Children number: {{datos[0]['nchildren']}} </li>
+                    <li> Bathroom number: {{datos[0]['nbathroom']}} </li>
+                    <li> Bedroom number: {{datos[0]['nbedroom']}}</li>
+                    <li>Services: {{datos[0]['service']}}</li>
+                    <li>Email: {{datos[0]['email']}}</li>
+                </ul>
+            </th>
+            <th>
+                <form action="/changep" >
+                    <button class="btn btn-primary" type="submit">Change password</button>
+                </form>
+                <form action="/changeE" align = "right">
+                    <button class="btn btn-primary" type="submit">Change email</button>
+                </form>    
+            </th>
+        </tr>
+    </table>
+    <h2>Meetings</h2>
+            {% for cita in citas %}
+                <table class = "tabla2">
+                    <tr>
+                        <th><img  class = "person" src="/static/meet.png" alt="person"></th>
+                        <td>Hour: {{cita['hour'] }}</td>
+                        <td>Day: {{cita['day']}}</td>
+                        <td>Consultant: {{cita['username']}}</td>
+                        <td>Role: {{cita['role']}}</td> 
+                    </tr>
+                </table>
+            {% endfor%}
+{% endblock %}

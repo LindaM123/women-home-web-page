@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class = "tabla3">
+        <tr>
+            <th class = "th3">Hour</th>
+            {% for day in days %}
+                <th class = "th3">{{day}}</th>
+            {% endfor %}
+        </tr>
+        {% for i in range(6) %}
+            <tr class = "th3">
+                <th>{{hours[i]}}</th>
+                {% for j in range(7) %}
+                    {% if calendar[(7*i)+j]['state'] == 'available'%}
+                        <td class = "td3" style = "background-color : #ffb4a2;">
+                            State: {{calendar[(7*i)+j]['state']}}
+                            <br/>
+                            User: {{calendar[(7*i) + j]['username'] }}
+                            <br/>
+                        </td>
+                    {% endif %}
+                    {% if calendar[(7*i)+j]['state'] == 'unavailable'%}
+                        <td class = "td3" style = "background-color : #e63946;">
+                            State: {{calendar[(7*i)+j]['state']}}
+                            <br/>
+                            User: {{calendar[(7*i) + j]['username'] }}
+                            <br/>
+                        </td>
+                    {% endif %}
+                {% endfor %}                    
+            </tr>
+        {% endfor %}    
+    </table>
+    <form action = "/agendar" method = "post">
+            Meeting day: 
+            <select name="day">
+                {% for day in days %}
+                <option>{{day}}</option>
+                {% endfor %}
+            </select>
+            Meeting hour: 
+            <select name="hour">
+                {% for hour in hours %}
+                <option>{{hour}}</option>
+                {% endfor %}
+            </select>
+
+            id lawyer: 
+            <select name="idm">
+                <option>{{calendar[0]['id']}}</option>
+            </select>
+        <button class="btn btn-primary" type="submit">Select</button>
+    </form>
+    
+{% endblock %}

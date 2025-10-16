@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+    <form action="/changeE" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="passwordV" placeholder="Actual password" type="password" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="emailN" placeholder="New email" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

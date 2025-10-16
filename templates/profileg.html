@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class = "tabla2">
+        <tr>
+            <th><img  class = "person" src="/static/person.png" alt="person"></th>
+            <td>
+                <ul>
+                    <li>Username: {{datos[0]['username']}} </li>
+                    
+                </ul>
+            </td>
+            <td>
+                 <form action="/changep">
+                    <button class="btn btn-primary" type="submit">Change password</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <h2>Meetings</h2>
+            {% for cita in citas %}
+                <table class = "tabla2">
+                    <tr>
+                        <th><img  class = "person" src="/static/meet.png" alt="person"></th>
+                        <td>Hour: {{cita['hour'] }}</td>
+                        <td>Day: {{cita['day']}}</td>
+                        <td>Consultant: {{cita['username']}}</td>
+                        <td>Role: {{cita['role']}}</td> 
+                    </tr>
+                </table>
+            {% endfor%}
+{% endblock %}

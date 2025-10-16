@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/registerH" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirmation" type="password" required>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="department" placeholder="Department" type="text" required>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="city" placeholder="City" type="text" required>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="nadult" placeholder="Adults number" type="numerical" required min="0" pattern="^[0-9]+">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="nchildren" placeholder="Children number" type="numerical" required min="0" pattern="^[0-9]+">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="nbedroom" placeholder="Bedrooms number" type="numerical" required min="0" pattern="^[0-9]+">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="nbathroom" placeholder="Bathrooms number" type="numerical" required min="0" pattern="^[0-9]+">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="service" placeholder="Services" type="text" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="email" placeholder="Email to contact" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>    
+    </form>
+{% endblock %}
