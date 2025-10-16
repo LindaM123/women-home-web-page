@@ -1,4 +1,4 @@
-# 🏡 Women Home – Final Project
+# 🏡 Women Home – Web Project
 
 This is the final project for **Harvard University’s CS50x**, developed to provide a digital space that supports and connects women through resources, housing, and psychological assistance.
 
@@ -45,7 +45,7 @@ final/
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/yourusername/women-home.git
+   git clone https://github.com/LindaM123/women-home.git
    cd women-home/final
    ```
 
