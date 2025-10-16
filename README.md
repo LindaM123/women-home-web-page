@@ -45,7 +45,7 @@ final/
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/LindaM123/women-home.git
+   git clone https://github.com/LindaM123/women-home-web-page.git
    cd women-home/final
    ```
 
@@ -97,7 +97,15 @@ flask --app application.py run
 
 ## 📸 UI Preview
 
-*(You can add screenshots of the homepage or key features here later.)*
+Here are some previews of the application interface:
+
+| Home Page | Initial Page | Profile | Registration |
+|-----------|--------------|---------|--------------|
+| ![Home Page](./pictures/home_page.png) | ![Initial Page](./pictures/initial_page.png) | ![Profile](./pictures/profile.png) | ![Registration](./pictures/registration.png) |
+
+| Consultations | Schedule Date | Search House | Select Lawyer |
+|---------------|---------------|--------------|---------------|
+| ![Consultations](./pictures/consultations.png) | ![Schedule Date](./pictures/schedule_date.png) | ![Search House](./pictures/search_house.png) | ![Select Lawyer](./pictures/select_lawyer.png) |
 
 ## 📝 Acknowledgments
 
